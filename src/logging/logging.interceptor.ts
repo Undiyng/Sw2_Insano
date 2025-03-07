@@ -22,7 +22,7 @@ export class LoggingInterceptor implements NestInterceptor {
       timeZone: 'America/Caracas',
       hour12: true,
     });
-    const ip:string = req.ip === '::1' ? '127.0.0.1' : req.ip;
+    const ip:string = req.ip;
     const method:string = req.method
     const originalUrl:string = req.originalUrl
     const user = (req as any).user || { userId: 'No autenticado', email: 'No autenticado', typo: 'No autenticado' };
