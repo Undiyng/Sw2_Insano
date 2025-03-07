@@ -30,7 +30,8 @@ async function bootstrap() {
       'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.11.1/swagger-ui-standalone-preset.js',
     ],
   });
-  app.set('trust proxy', true); //revirtiendo el use
+  const expressApp = app.getHttpAdapter().getInstance();
+  expressApp.set('trust proxy', true); //revirtiendo el use
   await app.listen(process.env.PORT ?? 3200);
 }
 bootstrap();
