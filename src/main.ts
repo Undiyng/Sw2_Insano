@@ -32,6 +32,6 @@ async function bootstrap() {
   });
   const expressApp = app.getHttpAdapter().getInstance();
   expressApp.set('trust proxy', true); //revirtiendo el use
-  await app.listen(process.env.PORT ?? 3200);
+  await app.listen(3200);
 }
 bootstrap();
